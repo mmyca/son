@@ -66,7 +66,7 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary d-grid w-100">Register</button>
+            <button type="submit" class="btn btn-info d-grid w-100">Register</button>
           </form>
 
           <!-- Login Link -->

@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Models\Roles;
 use Auth;
 
-class IfAdmin
+class IfCoordinator
 {
     /**
      * Handle an incoming request.
@@ -19,8 +19,8 @@ class IfAdmin
     public function handle(Request $request, Closure $next): Response
     {
         If(Auth::user()){
-            $role = Role::where('id', auth()->user()->role_id)->first();
-            if($role-> == '1'){
+            $role = Role::where('id', auth()->role_id)->first();
+            if($role-> == '2'){
                 return $next($request);
             }
         }

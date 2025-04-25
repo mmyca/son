@@ -21,10 +21,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/admin', [AdminController::class, 'index']);
+//admin routes
+Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
+    Route::get('/dashboard', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.dashboard');
 });
 
-Route::middleware(['auth', 'role:user'])->group(function () {
-    Route::get('/user', [UserController::class, 'index']);
-});
+// Route::middleware(['auth', 'role:admin'])->group(function () {
+//     Route::get('/admin', [AdminController::class, 'index']);
+// });
+
+// Route::middleware(['auth', 'role:user'])->group(function () {
+//     Route::get('/user', [UserController::class, 'index']);
+// });

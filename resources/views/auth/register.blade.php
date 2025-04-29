@@ -11,62 +11,41 @@
 
           <form method="POST" action="{{ route('register') }}">
             @csrf
-
-            <!-- Name Field -->
-            <div class="mb-6">
-              <label for="name" class="form-label">Name</label>
-              <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-              @error('name')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-              @enderror
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="username" name="name" placeholder="Enter your username" value="{{ old('name') }}" autofocus />
+                @if ($errors->has('name'))
+                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                @endif
             </div>
-
-            <!-- Email Field -->
-            <div class="mb-6">
-              <label for="email" class="form-label">Email Address</label>
-              <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-              @error('email')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-              @enderror
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter your email" value="{{ old('email') }}" />
+                @if ($errors->has('email'))
+                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                @endif
             </div>
-
-            <!-- Password Field -->
-            <div class="form-password-toggle mb-6">
-              <label class="form-label" for="password">Password</label>
-              <div class="input-group input-group-merge">
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" required autocomplete="new-password">
-                <span class="input-group-text cursor-pointer"><i class="icon-base bx bx-hide"></i></span>
-              </div>
-              @error('password')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-              @enderror
+            <div class="mb-3 form-password-toggle">
+                <label class="form-label" for="password">Password</label>
+                <div class="input-group input-group-merge">
+                    <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="••••••••" />
+                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                </div>
+                @if ($errors->has('password'))
+                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                @endif
             </div>
-
-            <!-- Confirm Password Field -->
-            <div class="mb-6">
-              <label for="password_confirmation" class="form-label">Confirm Password</label>
-              <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+            <div class="mb-3">
+                <label for="password_confirmation" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Confirm your password" />
             </div>
-
-            <!-- Terms and Conditions -->
-            <div class="my-7">
-              <div class="form-check mb-0">
-                <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
-                <label class="form-check-label" for="terms-conditions">
-                  I agree to
-                  <a href="javascript:void(0);">privacy policy & terms</a>
-                </label>
-              </div>
+            <div class="mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
+                    <label class="form-check-label" for="terms-conditions">I agree to <a href="#">privacy policy & terms</a></label>
+                </div>
             </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-info d-grid w-100">Register</button>
+            <button type="submit" class="btn btn-primary d-grid w-100">Sign up</button>
           </form>
 
           <!-- Login Link -->

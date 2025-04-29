@@ -6,8 +6,8 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
-use App\Models\Roles;
-use Auth;
+use App\Models\Role;
+// use Auth;
 
 class IfUser
 {
@@ -19,8 +19,9 @@ class IfUser
     public function handle(Request $request, Closure $next): Response
     {
         If(Auth::user()){
-            $role = Role::where('id', auth()->role_id)->first();
-            if($role-> == '3'){
+            $role = Role::where('id', auth()->user()->role_id)->first();
+
+            if($role && $role->id == '3'){
                 return $next($request);
             }
         }

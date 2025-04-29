@@ -6,8 +6,8 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
-use App\Models\Roles;
-use Auth;
+use App\Models\Role;
+// use Auth;
 
 class IfAdmin
 {
@@ -20,7 +20,8 @@ class IfAdmin
     {
         If(Auth::user()){
             $role = Role::where('id', auth()->user()->role_id)->first();
-            if($role-> == '1'){
+
+            if($role && $role->id == '1'){
                 return $next($request);
             }
         }

@@ -19,18 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //admin routes
 Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::get('/', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
 });
 
-
-//coordinator routes
-Route::group(['prefix' => 'coordinator', 'middleware' => ['coordinator']], function () {
-    Route::get('/', [App\Http\Controllers\Admin\CoordinatorController::class, 'index'])->name('coordinator.index');
-});
 
 //user routes
 Route::group(['prefix' => 'user', 'middleware' => ['user']], function () {

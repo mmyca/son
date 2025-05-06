@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('auth.index')
 
 @section('content')
 <div class="container-xxl">
@@ -30,7 +30,7 @@
                 @endif
             </div>
             <div class="mb-3 row">
-                <input type="submit" class="btn btn-info" value="Login">
+                <input type="submit" class="btn btn-primary" value="Login">
             </div>
         </form>
 

@@ -12,7 +12,7 @@
           </h1>
          </marquee>
       </div>
-      © <script>document.write(new Date().getFullYear());</script> SOS
+      © <script>document.write(new Date().getFullYear());</script> SOS  
     </div>
   </footer>
   <!-- / Footer -->

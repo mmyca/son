@@ -13,28 +13,28 @@
       <div class="menu-inner-shadow"></div>
         <ul class="menu-inner py-1">
           <!-- Dashboard -->
-          <li class="menu-item active">
-            <a href="" class="menu-link">
+          <li class="menu-item {{ Route::is('dashboard') ? 'active' : '' }}">
+            <a href="{{ route('dashboard') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-home-circle"></i>
               <div data-i18n="Analytics">Dashboard</div>
             </a>
           </li>
-          <li class="menu-item">
-            <a href="" class="menu-link">
+          <li class="menu-item {{ Route::is('scholar') ? 'active' : '' }}">
+            <a href="{{ route('scholar') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-award"></i>
-              <div data-i18n="Analytics">Scholarships</div>
+              <div data-i18n="Analytics">Scholar</div>
             </a>
           </li>
-          <li class="menu-item">
-            <a href="" class="menu-link">
+          <li class="menu-item {{ Route::is('grant') ? 'active' : '' }}">
+            <a href="{{ route('grant') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-gift"></i>
-              <div data-i18n="Analytics">Grantees</div>
+              <div data-i18n="Analytics">Grant</div>
             </a>
           </li>
-          <li class="menu-item">
-            <a href="" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-file"></i>
-              <div data-i18n="Analytics">Report</div>
+          <li class="menu-item {{ Route::is('account') ? 'active' : '' }}">
+            <a href="{{ route('account') }}" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-user"></i>
+              <div data-i18n="Analytics">Profile Information</div>
             </a>
           </li>
         </aside>

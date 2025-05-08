@@ -22,17 +22,10 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Coordinator',
-            'email' => 'coordinator@gmail.com',
-            'password' => Hash::make('password'),
-            'role_id' => '2',
-        ]);
-
-        User::create([
             'name' => 'User',
             'email' => 'user@gmail.com',
             'password' => Hash::make('password'),
-            'role_id' => '3',
+            'role_id' => '2',
         ]);
     }
 }

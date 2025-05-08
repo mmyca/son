@@ -13,26 +13,26 @@
       <div class="menu-inner-shadow"></div>
         <ul class="menu-inner py-1">
           <!-- Dashboard -->
-          <li class="menu-item active">
+          <li class="menu-item {{ Route::is('dashboard') ? 'active' : '' }}">
             <a href="{{ route('dashboard') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-home-circle"></i>
               <div data-i18n="Analytics">Dashboard</div>
             </a>
           </li>
-          <li class="menu-item">
+          <li class="menu-item {{ Route::is('scholar') ? 'active' : '' }}">
             <a href="{{ route('scholars') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-award"></i>
               <div data-i18n="Analytics">Scholarships</div>
             </a>
           </li>
-          <li class="menu-item">
-            <a href="" class="menu-link">
+          <li class="menu-item {{ Route::is('grantees') ? 'active' : '' }}">
+            <a href="{{ route('grantees') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-gift"></i>
               <div data-i18n="Analytics">Grantees</div>
             </a>
           </li>
-          <li class="menu-item">
-            <a href="" class="menu-link">
+          <li class="menu-item {{ Route::is('report') ? 'active' : '' }}">
+            <a href="{{ route('report') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-file"></i>
               <div data-i18n="Analytics">Report</div>
             </a>

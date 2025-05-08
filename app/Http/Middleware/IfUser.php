@@ -21,7 +21,7 @@ class IfUser
         If(Auth::user()){
             $role = Role::where('id', auth()->user()->role_id)->first();
 
-            if($role && $role->id == '3'){
+            if($role && $role->id == '2'){
                 return $next($request);
             }
         }

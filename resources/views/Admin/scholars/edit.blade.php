@@ -6,7 +6,15 @@
         <h4 class="fw-bold py-3 mb-4">
             <span class="text-muted fw-light">Scholarship /</span> Edit Scholar
         </h4>
-
+        @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="card">
             <h5 class="card-header">Edit Scholar</h5>
             <div class="card-body">

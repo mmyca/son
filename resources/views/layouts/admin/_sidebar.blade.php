@@ -19,7 +19,7 @@
               <div data-i18n="Analytics">Dashboard</div>
             </a>
           </li>
-          <li class="menu-item {{ Route::is('scholar') ? 'active' : '' }}">
+          <li class="menu-item {{ Route::is('scholars') ? 'active' : '' }}">
             <a href="{{ route('scholars') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-award"></i>
               <div data-i18n="Analytics">Scholarships</div>
@@ -29,6 +29,12 @@
             <a href="{{ route('grantees') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-gift"></i>
               <div data-i18n="Analytics">Grantees</div>
+            </a>
+          </li>
+          <li class="menu-item {{ Route::is('account') ? 'active' : '' }}">
+            <a href="{{ route('account') }}" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-user"></i>
+              <div data-i18n="Analytics">Profile Information</div>
             </a>
           </li>
           <li class="menu-item {{ Route::is('report') ? 'active' : '' }}">

@@ -12,7 +12,10 @@
             @endif
             <div class="d-flex justify-content-between align-items-center card-header">
                 <h5 class="m-0">Scholarship</h5>
-                <a href="{{ route('scholars.create') }}" class="btn btn-primary">Add Scholarship</a>
+                <a href="{{ route('scholars.create') }}" class="btn btn-primary">
+                	<i class="menu-icon tf-icons bx bx-plus-circle"></i>
+                	Add Scholarship
+                </a>
             </div>
                 <table class="table">
                     <thead>

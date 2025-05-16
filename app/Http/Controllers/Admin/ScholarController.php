@@ -24,33 +24,34 @@ class ScholarController extends Controller
         $request->validate([
             's_name' => 'required|string',
             'grants' => 'required|string',
-            'short_des' => 'required|string',
+            'short_des' => 'required|string|max:65535',
         ]);
 
         Scholars::create($request->all());
         return redirect()->route('scholars.index')->with('success', 'Scholarship created successfully.');
     }
 
-    public function edit(Scholars $Scholars)
+    public function edit(Scholars $scholar)
     {
-        return view('admin.scholars.edit', compact('Scholars'));
+        return view('admin.scholars.edit', compact('scholar'));
     }
 
-    public function update(Request $request, Scholars $Scholars)
+    public function update(Request $request, Scholars $scholar)
     {
         $request->validate([
             's_name' => 'required|string',
             'grants' => 'required|string',
-            'short_des' => 'required|string',
+            'short_des' => 'required|string|max:65535',
         ]);
 
-        $Scholars->update($request->all());
+        $scholar->update($request->all());
         return redirect()->route('scholars.index')->with('success', 'Scholarship updated successfully.');
     }
 
-    public function destroy(Scholars $Scholars)
+    public function destroy(Scholars $scholar)
     {
-        $Scholars->delete();
+        $scholar->delete();
         return redirect()->route('scholars.index')->with('success', 'Scholarship deleted successfully.');
     }
+
 }

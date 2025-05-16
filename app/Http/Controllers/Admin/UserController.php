@@ -13,14 +13,14 @@ class UserController extends Controller
     public function index()
     {
         $users = User::orderBy('id', 'ASC')->paginate(10);
-        return view('admin.users.index', [
+        return view('admin.account.index', [
             'users' => $users
         ]);
     }
 
     public function create()
     {
-        return view('admin.users.create');
+        return view('admin.account.create');
     }
 
     public function store(Request $request)
@@ -37,12 +37,12 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('users.index')->with('success', 'User admin created successfully');
+        return redirect()->route('account.index')->with('success', 'User admin created successfully');
     }
 
     public function edit(User $user)
     {
-        return view('admin.users.edit', compact('user'));
+        return view('admin.account.edit', compact('user'));
     }
 
     public function update(Request $request, User $user)
@@ -53,12 +53,12 @@ class UserController extends Controller
         ]);
 
         $user->update($request->only(['name', 'email']));
-        return redirect()->route('users.index')->with('success', 'User admin updated successfully.');
+        return redirect()->route('account.index')->with('success', 'User admin updated successfully.');
     }
 
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('users.index')->with('success', 'User admin deleted successfully.');
+        return redirect()->route('account.index')->with('success', 'User admin deleted successfully.');
     }
 }

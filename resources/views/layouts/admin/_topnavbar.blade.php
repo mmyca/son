@@ -12,15 +12,16 @@ id="layout-navbar"
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <!-- Search -->
         <div class="navbar-nav align-items-center">
-        <div class="nav-item d-flex align-items-center">
-            <i class="bx bx-search fs-4 lh-0"></i>
+          <form action="" method="GET" class="d-flex align-items-center">
+            <i class="bx bx-search fs-4 lh-0 me-2"></i>
             <input
-            type="text"
-            class="form-control border-0 shadow-none"
-            placeholder="Search..."
-            aria-label="Search..."
+              type="text"
+              name="query"
+              class="form-control border-0 shadow-none"
+              placeholder="Search..."
+              aria-label="Search..."
             />
-        </div>
+          </form>
         </div>
         <!-- /Search -->
 
@@ -53,7 +54,7 @@ id="layout-navbar"
                     <div class="dropdown-divider"></div>
                 </li>
                 <li>
-                    <a href="" class="dropdown-item" href="#">
+                    <a href="{{ route('account')}}" class="dropdown-item" href="#">
                         <i class="bx bx-user me-2"></i>
                         <span class="align-middle">My Profile</span>
                     </a>

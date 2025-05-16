@@ -34,12 +34,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware('auth')->prefix('admin')->group(function() {
     Route::get('/', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('index');
     Route::get('/dashboard', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('dashboard');
+    Route::resource('admin/dashboard', App\Http\Controllers\Admin\AdminController::class);
     Route::get('/account', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('account');
-    Route::resource('admin/users', App\Http\Controllers\Admin\UsersController::class);
+    Route::resource('admin/account', App\Http\Controllers\Admin\UserController::class);
     Route::get('/scholars', [App\Http\Controllers\Admin\ScholarController::class, 'index'])->name('scholars');
     Route::resource('admin/scholars', App\Http\Controllers\Admin\ScholarController::class);
-    Route::get('/grantees', [App\Http\Controllers\Admin\ScholarController::class, 'index'])->name('grantees');
-    Route::resource('admin/grantees', App\Http\Controllers\Admin\ScholarController::class);
+    Route::delete('/scholars/{scholar}', [App\Http\Controllers\Admin\ScholarController::class, 'destroy'])->name('scholars.destroy');
+    Route::get('/grantees', [App\Http\Controllers\Admin\GranteesController::class, 'index'])->name('grantees');
+    Route::resource('admin/grantees', App\Http\Controllers\Admin\GranteesController::class);
     Route::get('/report', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('report');
 });
 

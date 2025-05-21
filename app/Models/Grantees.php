@@ -9,5 +9,5 @@ class Grantees extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['student_id', 'fname', 'mname', 'lname' 'scholar_name', 'description'];
+    protected $fillable = ['student_id', 'fname', 'mname', 'lname', 'scholar_name', 'grants', 'description'];
 }

@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('fname');
             $table->string('mname');
             $table->string('lname');
+            $table->string('scholar_name');
+            $table->string('grants');
+            $table->mediumtext('description');
             $table->timestamps();
         });
     }

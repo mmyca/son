@@ -26,7 +26,7 @@
             </a>
           </li>
           <li class="menu-item {{ Route::is('grant') ? 'active' : '' }}">
-            <a href="{{ route('grant') }}" class="menu-link">
+            <a href="{{ route('grants') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-gift"></i>
               <div data-i18n="Analytics">Grant</div>
             </a>

@@ -1,12 +1,8 @@
-@extends('layouts.admin.index')
+@extends('layouts.student.index')
 
 @section('content')
-<div class="content-wrapper">
-    <!-- Content -->
-
-    <div class="container-xxl flex-grow-1 container-p-y">
+<div class="container-xxl flex-grow-1 container-p-y">
       <h4 class="py-3 mb-4"><span class="text-muted fw-light">Account Profile /</span> Account</h4>
-
       <div class="row">
         <div class="col-md-12">
           <ul class="nav nav-pills flex-column flex-md-row mb-3">
@@ -53,31 +49,33 @@
             </div>
             <hr class="my-0" />
             <div class="card-body">
-              <form id="formAccountSettings" method="POST" onsubmit="return false">
-                @forelse($users as $user)
-                <div class="row">
-                  <div class="mb-3 col-md-6">
-                    <label for="name" class="form-label">Name</label>
-                    <input
-                      class="form-control"
-                      value="{{ $user->name }}">
-                  </div>
-                  <div class="mb-3 col-md-6">
-                    <label for="email" class="form-label">E-mail</label>
-                    <input
-                      class="form-control"
-                      value="{{ $user->email }}">
-                  </div>
-                  @empty
-                </div>
-                <@endforelse
-              </form>
+              <form id="formAccountSettings" method="POST" action="{{ route('account.index', $user->id) }}">
+  @csrf
+  <div class="row">
+    <div class="mb-3 col-md-6">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        value="{{ Auth::user($id)->name }}"
+        required>
+    </div>
+
+    <div class="mb-3 col-md-6">
+      <label for="email" class="form-label">E-mail</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        value="{{ Auth::user($id)->email }}"
+        required>
+    </div>
+  </div>
+</form>
+
             </div>
             <!-- /Account -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="content-backdrop fade"></div>
-    </div>]
 @endsection

@@ -13,8 +13,8 @@
       <div class="menu-inner-shadow"></div>
         <ul class="menu-inner py-1">
           <!-- Dashboard -->
-          <li class="menu-item {{ Route::is('dashboard') ? 'active' : '' }}">
-            <a href="{{ route('dashboard') }}" class="menu-link">
+          <li class="menu-item {{ Route::is('dashboards') ? 'active' : '' }}">
+            <a href="{{ route('dashboards') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-home-circle"></i>
               <div data-i18n="Analytics">Dashboard</div>
             </a>
@@ -31,17 +31,17 @@
               <div data-i18n="Analytics">Grantees</div>
             </a>
           </li>
-          <li class="menu-item {{ Route::is('account') ? 'active' : '' }}">
-            <a href="{{ route('account') }}" class="menu-link">
+          <li class="menu-item {{ Route::is('accounts') ? 'active' : '' }}">
+            <a href="{{ route('accounts') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-user"></i>
               <div data-i18n="Analytics">Profile Information</div>
             </a>
           </li>
-          <li class="menu-item {{ Route::is('report') ? 'active' : '' }}">
+          <!-- <li class="menu-item {{ Route::is('report') ? 'active' : '' }}">
             <a href="{{ route('report') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-file"></i>
               <div data-i18n="Analytics">Report</div>
             </a>
-          </li>
+          </li> -->
         </aside>
 <!-- / Menu -->

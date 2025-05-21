@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use App\Models\Grantees;
@@ -11,12 +11,12 @@ class GranteesController extends Controller
     public function index()
     {
         $grantees = Grantees::all();
-        return view('admin.grantees.index', compact('grantees'));
+        return view('student.grantees.index', compact('grantees'));
     }
 
     public function create()
     {
-        return view('admin.grantees.create');
+        return view('student.grantees.create');
     }
 
     public function store(Request $request)
@@ -37,7 +37,7 @@ class GranteesController extends Controller
 
     public function edit(Grantees $grantee)
     {
-        return view('admin.grantees.edit', compact('grantee'));
+        return view('student.grantees.edit', compact('grantee'));
     }
 
     public function update(Request $request, Grantees $grantee)

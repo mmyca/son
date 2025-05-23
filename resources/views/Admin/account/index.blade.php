@@ -21,7 +21,7 @@
             <div class="card-body">
               <div class="d-flex align-items-start align-items-sm-center gap-4">
                 <img
-                  src="../assets/img/avatars/1.png"
+                  src="../assets/img/img/logo.jpg"
                   alt="user-avatar"
                   class="d-block rounded"
                   height="100"
@@ -38,18 +38,39 @@
                       hidden
                       accept="image/png, image/jpeg" />
                   </label>
-                  <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
-                    <i class="bx bx-reset d-block d-sm-none"></i>
-                    <span class="d-none d-sm-block">Reset</span>
-                  </button>
-
                   <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
                 </div>
               </div>
             </div>
             <hr class="my-0" />
             <div class="card-body">
-              <form id="formAccountSettings" method="POST" onsubmit="return false">
+              <form id="formAccountSettings" method="POST" action="{{ route('account.index', Auth::user()->id) }}">
+                @csrf
+                <div class="row">
+                  <div class="mb-3 col-md-6">
+                    <label for="name" class="form-label">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="form-control"
+                      value="{{ Auth::user()->name }}"
+                      required>
+                  </div>
+
+                  <div class="mb-3 col-md-6">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="form-control"
+                      value="{{ Auth::user()->email }}"
+                      required>
+                  </div>
+                </div>
+              </form>
+              <!-- <form id="formAccountSettings" method="POST" onsubmit="return false">
                 @forelse($users as $user)
                 <div class="row">
                   <div class="mb-3 col-md-6">
@@ -67,7 +88,7 @@
                   @empty
                 </div>
                 <@endforelse
-              </form>
+              </form> -->
             </div>
             <!-- /Account -->
 @endsection

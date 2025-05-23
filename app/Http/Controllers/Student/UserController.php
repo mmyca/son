@@ -13,14 +13,14 @@ class UserController extends Controller
     public function index()
     {
         $users = User::orderBy('id', 'ASC')->paginate(10);
-        return view('admin.account.index', [
+        return view('student.account.index', [
             'users' => $users
         ]);
     }
 
     public function create()
     {
-        return view('admin.account.create');
+        return view('student.account.create');
     }
 
     public function store(Request $request)
@@ -42,7 +42,7 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        return view('admin.account.edit', compact('user'));
+        return view('student.account.edit', compact('user'));
     }
 
     public function update(Request $request, User $user)

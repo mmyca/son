@@ -62,10 +62,10 @@ Route::middleware('auth')->prefix('user')->group(function() {
     Route::resource('user/dashboard', App\Http\Controllers\Student\StudentController::class);
     Route::get('/account', [App\Http\Controllers\Student\UserController::class, 'index'])->name('account');
     Route::resource('user/account', App\Http\Controllers\Student\UserController::class);
-    Route::get('/scholars', [App\Http\Controllers\Student\ScholarController::class, 'index'])->name('scholar');
-    Route::resource('user/scholars', App\Http\Controllers\Student\ScholarController::class);
+    Route::get('/scholars', [App\Http\Controllers\Student\ScholarsController::class, 'index'])->name('scholar');
+    Route::resource('user/scholars', App\Http\Controllers\Student\ScholarsController::class);
     Route::delete('/scholars/{scholar}', [App\Http\Controllers\Student\ScholarController::class, 'destroy'])->name('scholars.destroy');
-    Route::get('/grantees', [App\Http\Controllers\Student\GranteesController::class, 'index'])->name('grants');
-    Route::resource('user/grantees', App\Http\Controllers\Student\GranteesController::class);
-    Route::delete('/grantees/{grantee}', [App\Http\Controllers\Student\ScholarController::class, 'destroy'])->name('grantees.destroy');
+    Route::get('/grantees', [App\Http\Controllers\Student\GrantsController::class, 'index'])->name('grant');
+    Route::resource('user/grantees', App\Http\Controllers\Student\GrantsController::class);
+    Route::delete('/grantees/{grantee}', [App\Http\Controllers\Student\GrantsController::class, 'destroy'])->name('grantees.destroy');
 });

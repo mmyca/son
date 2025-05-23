@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Grantees;
 use Illuminate\Http\Request;
 
-class GranteesController extends Controller
+class GrantsController extends Controller
 {
     public function index()
     {

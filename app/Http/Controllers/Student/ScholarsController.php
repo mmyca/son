@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Scholars;
 use Illuminate\Http\Request;
 
-class ScholarController extends Controller
+class ScholarsController extends Controller
 {
     public function index()
     {

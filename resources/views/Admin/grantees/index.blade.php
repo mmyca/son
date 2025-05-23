@@ -22,6 +22,7 @@
                             <th>Scholarship Name</th>
                             <th>Grants</th>
                             <th>Description</th>
+                            <!-- <th>Request Approval</th> -->
                             <th>Action</th>
                         </tr>
                     </thead>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -11,7 +12,7 @@ class AdminController extends Controller
     //
     public function index() {
         // $user = $auth()->user();
-
-        return view('admin.dashboard.index');
+        $totalStudents = User::where('role_id', 'user')->count();
+        return view('admin.dashboard.index', compact('totalStudents'));
     }
 }

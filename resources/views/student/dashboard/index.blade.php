@@ -37,7 +37,6 @@
               </div>
               <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                 <div class="me-2">
-                  <p>Welcome {{ Auth::user()->name }}! 🎉</p>
                   <a href="{{ route('grantees.index') }}" class="btn btn-primary">
                     <i class="menu-icon tf-icons bx bx-folder-open"></i>
                     View
@@ -65,7 +64,6 @@
               </div>
               <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                 <div class="me-2">
-                  <p>Welcome {{ Auth::user()->name }}! 🎉</p>
                   <a href="{{ route('grantees.index') }}" class="btn btn-primary">
                     <i class="menu-icon tf-icons bx bx-folder-open"></i>
                     View

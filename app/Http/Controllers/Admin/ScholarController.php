@@ -48,6 +48,12 @@ class ScholarController extends Controller
         return redirect()->route('scholars.index')->with('success', 'Scholarship updated successfully.');
     }
 
+     public function show($id)
+    {
+        $scholar = Scholars::findOrFail($id);
+        return view('admin.scholars.view', compact('scholar'));
+    }
+
     public function destroy(Scholars $scholar)
     {
         $scholar->delete();

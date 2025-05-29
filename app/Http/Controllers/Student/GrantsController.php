@@ -56,6 +56,12 @@ class GrantsController extends Controller
         return redirect()->route('grantees.index')->with('success', 'Grantees updated successfully.');
     }
 
+    public function show($id)
+    {
+        $grantee = Grantees::findOrFail($id);
+        return view('student.grantees.view', compact('grantee'));
+    }
+
     public function destroy(Grantees $grantee)
     {
         $grantee->delete();

@@ -45,6 +45,9 @@
 					                    	<a class="dropdown-item" href="{{ route('scholars.edit', $scholar->id) }}" data-toggle="tooltip" data-placement="top" title="Edit">
                               				<span class="bx bx-edit btn btn-primary"> Edit</span>
 						                    </a>
+						                    <a class="dropdown-item" href="{{ route('scholars.show', $scholar->id) }}" data-toggle="tooltip" data-placement="top" title="View">
+                              				<span class="bx bx-envelope btn btn-warning"> View</span>
+						                    </a>
 						                    <!-- Delete Form -->
 						                    <form action="{{ route('scholars.destroy', $scholar->id) }}" method="POST" style="display:inline;">
 						                        @csrf
@@ -55,6 +58,7 @@
 						                    </form>
 					                    </center>
 					                </div>
+					            </div>
 					        </td>
 					    </tr>
 					    @empty

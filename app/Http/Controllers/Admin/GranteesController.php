@@ -32,7 +32,7 @@ class GranteesController extends Controller
         ]);
 
         Grantees::create($request->all());
-        return redirect()->route('admin.grantees.index')->with('success', 'Scholarship created successfully.');
+        return redirect()->route('grantees.index')->with('success', 'Scholarship created successfully.');
     }
 
     public function edit(Grantees $grantee)
@@ -53,13 +53,19 @@ class GranteesController extends Controller
         ]);
 
         $grantee->update($request->all());
-        return redirect()->route('admin.grantees.index')->with('success', 'Grantees updated successfully.');
+        return redirect()->route('grantees.index')->with('success', 'Grantees updated successfully.');
+    }
+
+    public function show($id)
+    {
+        $grantees = Grantees::findOrFail($id);
+        return view('admin.grantees.view', compact('grantees'));
     }
 
     public function destroy(Grantees $grantee)
     {
         $grantee->delete();
-        return redirect()->route('admin.grantees.index')->with('success', 'Grantees deleted successfully.');
+        return redirect()->route('grantees.index')->with('success', 'Grantees deleted successfully.');
     }
 
 }

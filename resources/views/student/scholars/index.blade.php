@@ -20,6 +20,7 @@
                             <th>Scholarship Name</th>
                             <th>Grants</th>
                             <th>Short Description</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -29,6 +30,21 @@
 					        <td>{{ $scholar->s_name }}</td>
 					        <td>{{ $scholar->grants }}</td>
 					        <td>{{ $scholar->short_des }}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <!-- Edit Button -->
+                                        <center>
+                                            <a class="dropdown-item" href="{{ route('scholars.show', $scholar->id) }}" data-toggle="tooltip" data-placement="top" title="View">
+                                            <span class="bx bx-envelope btn btn-warning"> View</span>
+                                            </a>
+                                        </center>
+                                    </div>
+                                </div>
+                            </td>
 					    </tr>
 					    @empty
 					    <tr>

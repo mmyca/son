@@ -44,6 +44,9 @@
 					                    <a class="dropdown-item" href="{{ route('grantees.edit', $grantee->id) }}" data-toggle="tooltip" data-placement="top" title="Edit">
                               				<span class="bx bx-edit btn btn-primary"> Edit</span>
 					                    </a>
+					                    <a class="dropdown-item" href="{{ route('grantees.show', $grantee->id) }}" data-toggle="tooltip" data-placement="top" title="View">
+                              				<span class="bx bx-edit btn btn-warning"> View</span>
+					                    </a>
 					                    <!-- Delete Form -->
 					                    <form action="{{ route('grantees.destroy', $grantee->id) }}" method="POST" style="display:inline;">
 					                        @csrf

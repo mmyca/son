@@ -31,7 +31,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::delete('/scholars/{scholar}', [App\Http\Controllers\Admin\ScholarController::class, 'destroy'])->name('scholars.destroy');
     Route::get('/grantees', [App\Http\Controllers\Admin\GranteesController::class, 'index'])->name('grantees');
     Route::resource('admin/grantees', App\Http\Controllers\Admin\GranteesController::class);
-    Route::delete('/grantees/{grantee}', [App\Http\Controllers\Admin\ScholarController::class, 'destroy'])->name('grantees.destroy');
+    Route::delete('/grantees/{grantee}', [App\Http\Controllers\Admin\GranteesController::class, 'destroy'])->name('grantees.destroy');
     Route::get('/account', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('accounts');
     Route::resource('admin/account', App\Http\Controllers\Admin\UserController::class);
     Route::get('/report', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('report');

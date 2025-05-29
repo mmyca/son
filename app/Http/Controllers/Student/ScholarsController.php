@@ -13,4 +13,10 @@ class ScholarsController extends Controller
         $scholars = Scholars::all();
         return view('student.scholars.index', compact('scholars'));
     }
+
+    public function show($id)
+    {
+        $scholar = Scholars::findOrFail($id);
+        return view('student.scholars.view', compact('scholar'));
+    }
 }
